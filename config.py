@@ -15,4 +15,11 @@ CLIENTS = [
     {"name": "T-Pro", "source_type": "jina", "url": "https://info.tpro.io/careers"},
     {"name": "ABTO", "source_type": "jina", "url": "https://careers.abtosoftware.com/vacancies/"},
     {"name": "ABTO", "source_type": "dou", "url": "https://jobs.dou.ua/companies/abto-llc/vacancies/"},
+    {"name": "Bookmap", "source_type": "jina", "url": "https://bookmap.com/careers"},
+    {"name": "fieldworkhub", "source_type": "jina", "url": "https://fieldworkhub.com/about-fieldworkhub/careers/"},
+    {"name": "Ideals", "source_type": "dou", "url": "https://jobs.dou.ua/companies/ideals/vacancies/"},
+    {"name": "Ideals", "source_type": "jina", "url": "https://ideals.jobs/all-vacancies/"},
+    {"name": "PulseLabs", "source_type": "jina", "url": "https://www.linkedin.com/jobs/pulse-labs-jobs-worldwide?f_C=27240022&position=1&pageNum=0"},
+    {"name": "Eztechtonic", "source_type": "dou", "url": "https://jobs.dou.ua/companies/eztechtonic/vacancies/"},
+
 ]
