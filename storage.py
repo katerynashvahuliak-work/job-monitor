@@ -1,7 +1,9 @@
 import json
+import os
 from pathlib import Path
 
-SEEN_FILE = Path(__file__).parent / "seen_jobs.json"
+_data_dir = os.environ.get("DATA_DIR", str(Path(__file__).parent))
+SEEN_FILE = Path(_data_dir) / "seen_jobs.json"
 
 
 def _make_key(job: dict) -> str:
