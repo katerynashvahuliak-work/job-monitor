@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import date
 from pathlib import Path
 
 _data_dir = Path(os.environ.get("DATA_DIR", str(Path(__file__).parent)))
@@ -11,13 +12,21 @@ def _make_key(job: dict) -> str:
     return f"{job['company_name']}|{job['title']}|{job['posted_date']}"
 
 
+def _current_month() -> str:
+    return date.today().strftime("%Y-%m")
+
+
 def load_seen() -> dict:
     if not SEEN_FILE.exists():
-        return {}
-    return json.loads(SEEN_FILE.read_text())
+        return {"_month": _current_month()}
+    seen = json.loads(SEEN_FILE.read_text())
+    if seen.get("_month") != _current_month():
+        return {"_month": _current_month()}
+    return seen
 
 
 def save_seen(seen: dict) -> None:
+    seen["_month"] = _current_month()
     SEEN_FILE.write_text(json.dumps(seen, indent=2))
 
 
