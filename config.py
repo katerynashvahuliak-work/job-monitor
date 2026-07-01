@@ -18,7 +18,7 @@ CLIENTS = [
     {"name": "Bookmap", "source_type": "jina", "url": "https://bookmap.com/careers"},
     {"name": "fieldworkhub", "source_type": "jina", "url": "https://fieldworkhub.com/about-fieldworkhub/careers/"},
     {"name": "Ideals", "source_type": "dou", "url": "https://jobs.dou.ua/companies/ideals/vacancies/"},
-    {"name": "Ideals", "source_type": "jina", "url": "https://ideals.jobs/all-vacancies/"},
+    {"name": "Ideals", "source_type": "ashby", "slug": "ideals"},
     {"name": "PulseLabs", "source_type": "jina", "url": "https://www.linkedin.com/jobs/pulse-labs-jobs-worldwide?f_C=27240022&position=1&pageNum=0"},
     {"name": "Eztechtonic", "source_type": "dou", "url": "https://jobs.dou.ua/companies/eztechtonic/vacancies/"},
 

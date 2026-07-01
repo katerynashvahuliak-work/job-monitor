@@ -3,6 +3,7 @@ import sys
 from datetime import datetime
 
 from altexsoft_parser import fetch_altexsoft_vacancies
+from ashby_parser import fetch_ashby_vacancies
 from config import CLIENTS, SLACK_WEBHOOK_URL
 from dou_parser import parse_dou_vacancies
 from extractor import extract_jobs, filter_ml_jobs
@@ -56,6 +57,8 @@ def main() -> None:
                 raw_jobs = parse_dou_vacancies(html, name)
             elif client["source_type"] == "altexsoft":
                 raw_jobs = fetch_altexsoft_vacancies(name)
+            elif client["source_type"] == "ashby":
+                raw_jobs = fetch_ashby_vacancies(name, client["slug"])
             else:
                 raw_jobs = _fetch_paginated(url, name)
         except Exception as e:
