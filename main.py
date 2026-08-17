@@ -23,8 +23,15 @@ def ts() -> str:
 def _fetch_paginated(base_url: str, company_name: str) -> list[dict]:
     all_jobs: list[dict] = []
     seen_titles: set[str] = set()
+    if "?page=" in base_url:
+        clean_base = base_url.split("?page=")[0]
+        def build_url(n: int) -> str:
+            return clean_base + f"?page={n}"
+    else:
+        def build_url(n: int) -> str:
+            return base_url if n == 1 else base_url.rstrip("/") + f"/page/{n}/"
     for page_num in range(1, 21):
-        page_url = base_url if page_num == 1 else base_url.rstrip("/") + f"/page/{page_num}/"
+        page_url = build_url(page_num)
         if page_num > 1:
             print(f"[{ts()}]   → page {page_num}")
         try:
